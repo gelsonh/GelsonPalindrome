@@ -3,8 +3,6 @@ function getValues() {
 
   let revString = checkForPalindrome(userString);
   displayResults(revString, userString);
-
-  displayResults(revString);
 }
 
 function checkForPalindrome(input, output) {
@@ -23,7 +21,6 @@ function displayResults(output, input) {
 
   if (output) {
     let reversedText = input.split("").reverse().join("");
-
     document.getElementById("results").textContent = reversedText;
     alertBox.classList.remove("alert-danger");
     alertBox.classList.add("alert-success");
