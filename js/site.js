@@ -1,5 +1,3 @@
-
-
 function getValues() {
   let userString = document.getElementById("userString").value;
   let isPalindrome = checkForPalindrome(userString);
@@ -19,11 +17,9 @@ function displayResults(isPalindrome, input) {
 
   if (isPalindrome) {
     h4Element.textContent = "Well done! You entered a Palindrome!";
-    alertBox.classList.remove("alert-danger");
     alertBox.classList.add("alert-success");
   } else {
     h4Element.textContent = "Oh no! That’s not a palindrome.";
-    alertBox.classList.remove("alert-success");
     alertBox.classList.add("alert-danger");
   }
   alertBox.classList.remove("invisible");
