@@ -1,36 +1,28 @@
+
+
 function getValues() {
   let userString = document.getElementById("userString").value;
-
-  let revString = checkForPalindrome(userString);
-  displayResults(revString, userString);
+  let isPalindrome = checkForPalindrome(userString);
+  displayResults(isPalindrome, userString);
 }
 
-function checkForPalindrome(input, output) {
-  // Use regex to eliminate punctuation and spaces
-  let userString = input.replace(/[^a-zA-Z0-9]/g, "");
-
-  // Ignore Capitalization
-  userString = userString.toLowerCase();
-
-  // Check if is a palindrome
+function checkForPalindrome(input) {
+  let userString = input.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
   return userString === userString.split("").reverse().join("");
 }
 
-function displayResults(output, input) {
+function displayResults(isPalindrome, input) {
   let alertBox = document.getElementById("alert");
+  let h4Element = document.querySelector("h4");
+  let revText = input.split("").reverse().join("");
+  document.getElementById("results").textContent = revText;
 
-  if (output) {
-    let revText = input.split("").reverse().join("");
-    let h4Element = document.querySelector("h4");
+  if (isPalindrome) {
     h4Element.textContent = "Well done! You entered a Palindrome!";
-    document.getElementById("results").textContent = revText;
     alertBox.classList.remove("alert-danger");
     alertBox.classList.add("alert-success");
   } else {
-    let revText = input.split("").reverse().join("");
-    let h4Element = document.querySelector("h4");
     h4Element.textContent = "Oh no! That’s not a palindrome.";
-    document.getElementById("results").textContent = revText;
     alertBox.classList.remove("alert-success");
     alertBox.classList.add("alert-danger");
   }
