@@ -55,7 +55,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="/index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/app.html"
@@ -85,16 +85,52 @@
 
     <!-- START: Main -->
     <main class="container py-3">
-      <h1>APP UI GOES HERE</h1>
-      <input
-        class="form-control"
-        id="message"
-        placeholder="Enter a message"
-        type="text"
-      />
-      <button class="btn btn-primary my-3" id="btnSubmit" type="button">
-        Display Message
-      </button>
+      <main class="container py-3">
+        <div class="ro row-cols-1 row-cols-md-2">
+          <div class="col">
+            <h1 class="display-5 fw-bold">Palindrome</h1>
+            <p class="lead">
+              There and back again! Rewing is a Javascript coding exercise using
+              arrays. The objective is to write a program which display a user
+              provided string in reverse.
+            </p>
+            <h2 class="display-6 border-bottom">Instructions</h2>
+            <p></p>
+          </div>
+          <div class="col">
+            <h5 class="border-bottom mb-3">Enter a phrase or word to check</h5>
+            <form action="#" class="row g-3">
+              <div class="col-12">
+                <input
+                  class="form-control"
+                  placeholder="Enter a Phrase"
+                  aria-label="Enter a Phrase"
+                  name="userString"
+                  id="userString"
+                  type="text"
+                />
+              </div>
+
+              <div class="col-12 text-end">
+                <button class="btn btn-primary" type="button" id="btnSubmit">
+                  Check It!
+                </button>
+              </div>
+            </form>
+            <div
+              class="alert alert-danger mt-4 fade show invisible"
+              role="alert"
+              id="alert"
+            >
+              <h4>Well done! You entered a Palindrome!</h4>
+              <hr />
+              Your phrase reversed is: <span class="revString"></span>
+
+              <span class="fw-bold" id="results"></span>
+            </div>
+          </div>
+        </div>
+      </main>
     </main>
     <!-- END: Main -->
 
@@ -132,9 +168,7 @@
     <script src="/js/site.js"></script>
 
     <script>
-      document
-        .getElementById("btnSubmit")
-        .addEventListener("click", displayMessage);
+      document.getElementById("btnSubmit").addEventListener("click", getValues);
     </script>
   </body>
 </html>
