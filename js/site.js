@@ -1,13 +1,26 @@
+// function getValues() {
+//   let userString = document.getElementById("userString").value;
+//   let isPalindrome = checkForPalindrome(userString);
+//   displayResults(isPalindrome, userString);
+// }
+
+// function checkForPalindrome(input) {
+//   let userString = input.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+//   return userString === userString.split("").reverse().join("");
+// }
+
 function getValues() {
   let userString = document.getElementById("userString").value;
   let isPalindrome = checkForPalindrome(userString);
   displayResults(isPalindrome, userString);
 }
 
-function checkForPalindrome(input) {
-  let userString = input.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+const regex = /[^a-z0-9]/gi;
+const checkForPalindrome = (input) => {
+  let userString = input.replaceAll(regex, "").toLowerCase();
   return userString === userString.split("").reverse().join("");
 }
+
 
 function displayResults(isPalindrome, input) {
   let alertBox = document.getElementById("alert");
